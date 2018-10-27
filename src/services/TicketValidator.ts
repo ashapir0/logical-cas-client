@@ -7,7 +7,7 @@ import { TicketResponseValidator } from "../utilities/TicketResponseValidator";
 
 /**
  * Remote Ticket Validator Service
- * @author Aaron J. Shapiro <aaron@babaco.com>
+ * @author Aaron J. Shapiro <shapia4@rpi.edu>
  */
 export class TicketValidator {
 

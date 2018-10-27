@@ -17,7 +17,7 @@ export class CASClientV2 extends GenericCASClient {
 
   /**
    * CASClientV2 Constructor
-   * @author Aaron J. Shapiro <aaron@babaco.com>
+   * @author Aaron J. Shapiro <shapia4@rpi.edu>
    *
    * For the onSuccess/onFailure functions you most likely want to redirect the user to a corresponding frontend handler.
    *
@@ -35,7 +35,7 @@ export class CASClientV2 extends GenericCASClient {
 
   /**
    * CAS Redirect Endpoint
-   * @author Aaron J. Shapiro <aaron@babaco.com>
+   * @author Aaron J. Shapiro <shapia4@rpi.edu>
    *
    * Client-implementations should bind their login endpoint to this function, when a user visits the endpoint
    * they will be redirected to the CAS service, which will issue them a ticket and redirect them back to the client-service.
@@ -53,7 +53,7 @@ export class CASClientV2 extends GenericCASClient {
 
   /**
    * CAS Ticket Verification Endpoint
-   * @author Aaron J. Shapiro <aaron@babaco.com>
+   * @author Aaron J. Shapiro <shapia4@rpi.edu>
    *
    * The client service needs to verify the ticket that the CAS issued and fetch the CAS-provided user identifier.
    * This function will make an asynchronous call to the CAS, verify the ticket and parse out the user-identifier.

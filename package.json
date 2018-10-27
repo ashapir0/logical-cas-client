@@ -1,6 +1,6 @@
 {
   "name": "logical-cas-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a central-authentication-service client that actually makes sense",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

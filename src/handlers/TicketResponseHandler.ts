@@ -6,7 +6,7 @@ export const RESPONSE_ERROR = "RESPONSE_ERROR";
 
 /**
  * CAS TicketResponse Handler
- * @author Aaron J. Shapiro <aaron@babaco.com>
+ * @author Aaron J. Shapiro <shapia4@rpi.edu>
  *
  * The class is used to make the generic responses from http or https run asynchronously and utilize Node.js' highly
  * performant event loop; also provides predictable failure states.
@@ -23,7 +23,7 @@ export class TicketResponseHandler extends EventEmitter {
 
   /**
    * Agnostically handle incoming response messages.
-   * @author Aaron J. Shapiro <aaron@babaco.com>
+   * @author Aaron J. Shapiro <shapia4@rpi.edu>
    *
    * This class will emit a complete event once the underlying end event is fired.
    * This class will emit an error event if the underlying error event is fired.
