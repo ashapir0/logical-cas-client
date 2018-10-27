@@ -1,12 +1,22 @@
-import { ClientConfig } from "..";
 import { Request, Response } from "express";
 
+import { ClientConfig } from "../definitions/ClientConfig";
+import { AuthFailureFunction, AuthSuccessFunction } from "../definitions/AuthCallbacks";
+
+/**
+ * Abstract CAS Client
+ */
 export abstract class GenericCASClient {
 
   protected readonly config: ClientConfig;
 
-  protected constructor(config: ClientConfig) {
+  protected readonly onAuthSuccess: AuthSuccessFunction;
+  protected readonly onAuthFailure: AuthFailureFunction;
+
+  protected constructor(config: ClientConfig, onAuthSuccess: AuthSuccessFunction, onAuthFailure: AuthFailureFunction) {
     this.config = config;
+    this.onAuthSuccess = onAuthSuccess;
+    this.onAuthFailure = onAuthFailure;
   }
 
   protected getClientUrl(): string {

@@ -34,7 +34,6 @@ export class TicketValidator {
   private getRequestOptions(): RequestOptionsHttp | RequestOptionsHttps {
     const ticketPath = this.config.endpoints.ticketVerificationPath;
     const returnUrl = `${encodeURIComponent(this.clientUrl + `${ticketPath}`)}`;
-
     return {
       host: this.config.server.host,
       port: this.config.server.port,
