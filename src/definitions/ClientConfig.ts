@@ -3,7 +3,6 @@ export type ClientConfig = {
   port?: number,
   secure: boolean,
   endpoints: {
-    loginRedirectPath: string,
     ticketVerificationPath: string
   },
   server: {
