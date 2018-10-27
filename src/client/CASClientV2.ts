@@ -8,7 +8,7 @@ import { GenericCASClient } from "./GenericCASClient";
 import { TicketValidator } from "../services/TicketValidator";
 
 type AuthSuccessFunction = ((userId: string, authResponse: Response) => Promise<any>);
-type AuthFailureFunction = ((authResponse: Response) => Promise<any>);
+type AuthFailureFunction = ((error: any, authResponse: Response) => Promise<any>);
 
 export class CASClientV2 extends GenericCASClient {
 
@@ -27,12 +27,12 @@ export class CASClientV2 extends GenericCASClient {
     this.verifyTicket = this.verifyTicket.bind(this);
   }
 
-  async redirectToCASLogin(res: Response): Promise<boolean> {
+  async redirectToCASLogin(req: Request, res: Response): Promise<void> {
+    void (req);
     const ticketEndpoint = this.config.endpoints.ticketVerificationPath;
     const returnUrl  = `?service=${encodeURIComponent(this.getClientUrl() + `${ticketEndpoint}`)}`;
     const redirectUrl = `${this.getServerUrl()}/cas/login${returnUrl}`;
     res.redirect(redirectUrl);
-    return true;
   }
 
   async verifyTicket(req: Request, res: Response): Promise<void> {
@@ -43,7 +43,7 @@ export class CASClientV2 extends GenericCASClient {
       await this.onAuthSuccess(user, res);
     }
     catch (error) {
-      await this.onAuthFailure(res);
+      await this.onAuthFailure(error, res);
     }
   }
 

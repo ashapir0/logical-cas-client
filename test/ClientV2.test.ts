@@ -37,11 +37,7 @@ describe("CASClientV2", () => {
 
     const c = new CASClientV2(config, MockAuthSuccess, MockAuthError);
     webServer.application.use("/auth/ticket", c.verifyTicket);
-
-    webServer.application.get("/", async (req: Request, res: Response) => {
-      void (req);
-      await c.redirectToCASLogin(res);
-    });
+    webServer.application.use("/", c.redirectToCASLogin);
 
   });
 });

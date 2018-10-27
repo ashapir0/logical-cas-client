@@ -1,5 +1,5 @@
-import { ClientConfig } from "../definitions/ClientConfig";
-import { Response } from "express";
+import { ClientConfig } from "..";
+import { Request, Response } from "express";
 
 export abstract class GenericCASClient {
 
@@ -21,6 +21,7 @@ export abstract class GenericCASClient {
     return `${protocol}://${this.config.server.host}${port}`;
   }
 
-  public async abstract redirectToCASLogin(res: Response): Promise<boolean>;
+  public async abstract redirectToCASLogin(req: Request, res: Response): Promise<void>;
+  public async abstract verifyTicket(req: Request, res: Response): Promise<void>;
 
 }
