@@ -42,7 +42,7 @@ import CasClient from "logical-cas-client";
 Prepare your configuration:
   - host: The hostname of your web-application (for development typically localhost)
   - port: The port of your web-application
-  - secure: Whether or not clients should be redirected to your service with HTTPS as the protocol (again for development typically no)
+  - secure: Whether or not users should be redirected to your service with HTTPS as the protocol (again for development typically no)
   - endpoints: The url-mapping that will be used with your CAS Client
   - ticketVerificationPath: The url users will be redirected to once they've logged into CAS V2/V3 which will verify their ticket server-to-server.
   - server (port, host, secure): The above parameters but in relation to the remote CAS.
