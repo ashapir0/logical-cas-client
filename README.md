@@ -8,7 +8,7 @@
   <a href="https://github.com/ashapir0/logical-cas-client/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PR's welcome"></a>
 </p>
 
-> The Logical Central-Authentication-Service (CAS) Client, is a control-first interface for CAS services for your <a href="https://expressjs.com" target="_blank">Express</a> web-application. While authored at <a href="https://rpi.edu" target="_blank">RPI</a> the Logical-CAS-Client should be compatible with any CAS server. 
+> The Logical Central-Authentication-Service (CAS) Client, is a control-first interface in tandem with CAS services for your <a href="https://expressjs.com" target="_blank">Express</a> web-application. While authored at <a href="https://rpi.edu" target="_blank">RPI</a> the Logical-CAS-Client should be compatible with any CAS server. 
 
 > Instead of abstracting underlying auth-strategies like other libraries, Logical-CAS-Client allows you to choose how to handle end-authentication whether with sessions, cookies, etc.
 
