@@ -92,7 +92,7 @@ function authError(req: Request, res: Response, error: any) {
 
 Map your express-server to the ticket-verification and login-redirect endpoints:
 ```javascript
-const client = CasClient(config, webServer.handleAuthSuccess, webServer.handleAuthFailure);
+const client = CasClient(config, authSuccess, authError);
 webServer.application.use(config.endpoints.ticketVerificationPath, client.verifyTicket);
 webServer.application.use("/auth/login", client.redirectToCASLogin);
 ```
