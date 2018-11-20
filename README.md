@@ -34,6 +34,31 @@ Let's get started by importing the library. This library is built with TypeScrip
 ```javascript
 var CasClient = require("logical-cas-client");
 ```
+
 ```typescript
 import CasClient from "logical-cas-client";
+```
+
+Prepare your configuration:
+  - host: The hostname of your web-application (for development typically localhost)
+  - port: The port of your web-application
+  - secure: Whether or not clients should be redirected to your service with HTTPS as the protocol (again for development typically no)
+  - endpoints: The url-mapping that will be used with your CAS Client
+  - ticketVerificationPath: The url users will be redirected to once they've logged into CAS V2/V3 which will verify their ticket server-to-server.
+  - server (port, host, secure): The above parameters but in relation to the remote CAS.
+
+```javascript
+    var config = {
+      host: "localhost",
+      port: 8080,
+      secure: false,
+      endpoints: {
+        ticketVerificationPath: "/auth/ticket"
+      },
+      server: {
+        host: "cas-auth.rpi.edu",
+        secure: true,
+        version: "2.0",
+      }
+    };
 ```
