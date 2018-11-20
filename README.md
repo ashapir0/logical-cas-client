@@ -1,5 +1,6 @@
 <h2 align="center">Logical-CAS-Client</h2>
 <p align="center">
+  <a href="https://travis-ci.org/ashapir0/logical-cas-client"><img src="https://travis-ci.org/ashapir0/logical-cas-client.svg?branch=master" alt="TravisCI Build Status"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="https://codeclimate.com/github/ashapir0/logical-cas-client/maintainability"><img src="https://api.codeclimate.com/v1/badges/62ca6570553055446a77/maintainability" alt="Maintainability Score"/></a>
   <a href="https://codeclimate.com/github/ashapir0/logical-cas-client/test_coverage"><img src="https://api.codeclimate.com/v1/badges/62ca6570553055446a77/test_coverage" alt="Test Coverage"/></a>
