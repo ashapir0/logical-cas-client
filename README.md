@@ -48,19 +48,19 @@ Prepare your configuration:
   - server (port, host, secure): The above parameters but in relation to the remote CAS.
 
 ```javascript
-    var config = {
-      host: "localhost",
-      port: 8080,
-      secure: false,
-      endpoints: {
-        ticketVerificationPath: "/auth/ticket"
-      },
-      server: {
-        host: "cas-auth.rpi.edu",
-        secure: true,
-        version: "2.0",
-      }
-    };
+var config = {
+  host: "localhost",
+  port: 8080,
+  secure: false,
+  endpoints: {
+    ticketVerificationPath: "/auth/ticket"
+  },
+  server: {
+    host: "cas-auth.rpi.edu",
+    secure: true,
+    version: "2.0",
+  }
+};
 ```
 Prepare your callback functions for user-login success and failure cases:
 ```typescript
@@ -92,9 +92,9 @@ function authError(req: Request, res: Response, error: any) {
 
 Map your express-server to the ticket-verification and login-redirect endpoints:
 ```javascript
-    const client = CasClient(config, webServer.handleAuthSuccess, webServer.handleAuthFailure);
-    webServer.application.use(config.endpoints.ticketVerificationPath, client.verifyTicket);
-    webServer.application.use("/auth/login", client.redirectToCASLogin);
+const client = CasClient(config, webServer.handleAuthSuccess, webServer.handleAuthFailure);
+webServer.application.use(config.endpoints.ticketVerificationPath, client.verifyTicket);
+webServer.application.use("/auth/login", client.redirectToCASLogin);
 ```
 
 **You just integrated CAS Authentication with your web-app!**
