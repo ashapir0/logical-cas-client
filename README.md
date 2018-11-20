@@ -75,6 +75,7 @@ Prepare your callback functions for user-login success and failure cases:
 function authSuccess(req: Request, res: Response, user: string): any {
   // Generate JWT... Set Cookie...
 }
+
 /**
  * Authentication Error Callback
  * This function will be invoked whenever a user fails to authenticate 
@@ -88,3 +89,12 @@ function authError(req: Request, res: Response, error: any) {
   // Redirect to front-end error page...
 }
 ```
+
+Map your express-server to the ticket-verification and login-redirect endpoints:
+```javascript
+    const client = CasClient(config, webServer.handleAuthSuccess, webServer.handleAuthFailure);
+    webServer.application.use(config.endpoints.ticketVerificationPath, client.verifyTicket);
+    webServer.application.use("/auth/login", client.redirectToCASLogin);
+```
+
+** You just integrated CAS Authentication with your web-app!**
