@@ -62,3 +62,29 @@ Prepare your configuration:
       }
     };
 ```
+Prepare your callback functions for user-login success and failure cases:
+```typescript
+/**
+ * Authentication Success Callback
+ * This function will be invoked whenever a user successfully authenticated with the CAS.
+ * 
+ * @param req {Express.Request}
+ * @param res {Express.Response}
+ * @param user {string}
+ */
+function authSuccess(req: Request, res: Response, user: string): any {
+  // Generate JWT... Set Cookie...
+}
+/**
+ * Authentication Error Callback
+ * This function will be invoked whenever a user fails to authenticate 
+ * with the CAS or the CAS returns an error.
+ * 
+ * @param req {Express.Request}
+ * @param res {Express.Response}
+ * @param error {any}
+ */
+function authError(req: Request, res: Response, error: any) {
+  // Redirect to front-end error page...
+}
+```
