@@ -14,3 +14,17 @@
 
 _Authored by:_
  - Aaron J. Shapiro
+
+## Getting Started
+
+Install Logical-CAS-Client using [`yarn`](https://yarnpkg.com/en/package/logical-cas-client):
+
+```bash
+yarn add logical-cas-client
+```
+
+Or via [`npm`](https://www.npmjs.com/):
+
+```bash
+npm install logical-cas-client
+```
