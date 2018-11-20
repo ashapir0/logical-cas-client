@@ -97,4 +97,4 @@ Map your express-server to the ticket-verification and login-redirect endpoints:
     webServer.application.use("/auth/login", client.redirectToCASLogin);
 ```
 
-** You just integrated CAS Authentication with your web-app!**
+**You just integrated CAS Authentication with your web-app!**
