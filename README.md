@@ -28,3 +28,12 @@ Or via [`npm`](https://www.npmjs.com/):
 ```bash
 npm install logical-cas-client
 ```
+
+Let's get started by importing the library. This library is built with TypeScript, so no additional type-definitions are necessary!
+
+```javascript
+var CasClient = require("logical-cas-client");
+```
+```typescript
+import CasClient from "logical-cas-client";
+```

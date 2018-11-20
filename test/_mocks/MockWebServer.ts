@@ -1,5 +1,5 @@
 import http from "http";
-import express from "express";
+import express, { Request, Response } from "express";
 
 export class MockWebServer {
 
@@ -14,6 +14,9 @@ export class MockWebServer {
   public async start(port: number): Promise<void> {
     this.httpInstance = this.application.listen(port);
   }
+
+  public handleAuthSuccess(req: Request, res: Response) {}
+  public handleAuthFailure(req: Request, res: Response) {}
 
   public async stop(): Promise<void> {
     if (this.httpInstance) this.httpInstance.close();

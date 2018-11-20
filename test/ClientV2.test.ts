@@ -1,9 +1,7 @@
-import {CASClientV2} from "../src/client/CASClientV2";
-import {ClientConfig} from "../src/definitions/ClientConfig";
-import {MockWebServer} from "./_mocks/MockWebServer";
-import { Request, Response } from "express";
-import {MockAuthSuccess} from "./_mocks/MockAuthSuccessFunction";
-import {MockAuthError} from "./_mocks/MockAuthErrorFunction";
+import CasClient, { ClientConfig } from "../src";
+
+import { MockWebServer } from "./_mocks/MockWebServer";
+
 const PORT = 8181;
 
 describe("CASClientV2", () => {
@@ -19,13 +17,12 @@ describe("CASClientV2", () => {
     await webServer.stop();
   });
 
-  test("stuff", (done) => {
+  test("stuff", () => {
     const config: ClientConfig = {
       host: "localhost",
       port: PORT,
       secure: false,
       endpoints: {
-        loginRedirectPath: "/auth/login",
         ticketVerificationPath: "/auth/ticket"
       },
       server: {
@@ -35,9 +32,10 @@ describe("CASClientV2", () => {
       }
     };
 
-    const c = new CASClientV2(config, MockAuthSuccess, MockAuthError);
-    webServer.application.use("/auth/ticket", c.verifyTicket);
-    webServer.application.use("/", c.redirectToCASLogin);
+    const client = CasClient(config, webServer.handleAuthSuccess, webServer.handleAuthFailure);
+
+    webServer.application.use(config.endpoints.ticketVerificationPath, client.verifyTicket);
+    webServer.application.use("/auth/login", client.redirectToCASLogin);
 
   });
 });
